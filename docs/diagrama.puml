@@ -1,0 +1,15 @@
+@startuml
+' TODO (fase 1): diagrama de classes do domínio. Atualizar a cada mudança de assinatura.
+abstract class ItemAcademico
+class AtividadePratica
+class TrabalhoEmGrupo
+class Lembrete
+class Workspace
+class PainelEstudante
+
+ItemAcademico <|-- AtividadePratica
+ItemAcademico <|-- Lembrete
+AtividadePratica <|-- TrabalhoEmGrupo
+Workspace "1" *-- "0..*" ItemAcademico
+PainelEstudante "1" o-- "0..*" Workspace
+@enduml

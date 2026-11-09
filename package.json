@@ -2,7 +2,7 @@
   "name": "organizadoracademico",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Sistema de organização de atividades e lembretes acadêmicos (POO em TypeScript)",
   "main": "app.js",
   "directories": {
     "doc": "docs"
@@ -10,13 +10,14 @@
   "scripts": {
     "build": "tsc",
     "demo": "tsx src/demo.ts",
-    "start": "npm run build"
+    "serve": "http-server . -c-1 -o /src/visao/index.html",
+    "start": "npm run build && npm run serve"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
