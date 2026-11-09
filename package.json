@@ -1,0 +1,23 @@
+{
+  "name": "organizadoracademico",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "demo": "tsx src/demo.ts",
+    "start": "npm run build"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
