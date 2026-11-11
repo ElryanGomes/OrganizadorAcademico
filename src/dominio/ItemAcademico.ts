@@ -1,3 +1,4 @@
+export type Origem = "PROFESSOR" | "AUTOESTUDO";
 export abstract class ItemAcademico {
     protected readonly _id: string;
     protected readonly _titulo: string;
@@ -41,5 +42,29 @@ export abstract class ItemAcademico {
         if (descricao.length > 500) {
             throw new Error("A descrição não pode ter mais de 500 caracteres.");
         }
+    }
+
+    abstract obterCategoria(): string;
+    abstract estaPendente(): boolean;
+    abstract obterExibicaoFormatada(): string;
+
+    obterResumo(): string {
+        return `${this.obterCategoria()}: ${this._titulo}`;
+    }
+
+    estaConcluido(): boolean {
+        return false;
+    }
+    estaAtrasado(hoje: Date = new Date()): boolean {
+        return false;
+    }
+    estaFixado(): boolean {
+        return false;
+    }
+    obterDataLimite(): Date | undefined {
+        return undefined;
+    }
+    obterOrigem(): Origem | undefined {
+        return undefined;
     }
 }
