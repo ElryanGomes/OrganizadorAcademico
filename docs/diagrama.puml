@@ -1,15 +1,164 @@
 @startuml
-' TODO (fase 1): diagrama de classes do domínio. Atualizar a cada mudança de assinatura.
-abstract class ItemAcademico
-class AtividadePratica
-class TrabalhoEmGrupo
-class Lembrete
-class Workspace
-class PainelEstudante
+title AcademiaFlow - Diagrama de Classes do Domínio
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam classFontStyle bold
+skinparam ArrowColor #333333
+skinparam class {
+  BackgroundColor #F8F8FF
+  BorderColor #333333
+}
+hide empty members
+
+class Estudante {
+  - nome: string
+  - workspaces: Workspace[]
+  --
+  + adicionarWorkspace(ws: Workspace): void
+  + removerWorkspace(codigo: string): void
+  + buscarWorkspacePorCodigo(codigo: string): Workspace | undefined
+  + listarWorkspaces(): Workspace[]
+}
+
+class Workspace {
+  - codigo: string
+  - nome: string
+  - professor: string
+  - salaOuLink?: string
+  - horario?: string
+  - itens: ItemAcademico[]
+  --
+  + adicionarItem(item: ItemAcademico): void
+  + buscarItemPorId(id: string): ItemAcademico | undefined
+  + removerItem(id: string): void
+  + listarItens(): ItemAcademico[]
+  + listarPendentes(): ItemAcademico[]
+  + listarConcluidos(): ItemAcademico[]
+  + listarAtrasados(): ItemAcademico[]
+  + calcularTotalAtividades(): number
+  + calcularTaxaConclusao(): number
+  + buscarPorTexto(texto: string): ItemAcademico[]
+  + filtrarLembretesFixados(): ItemAcademico[]
+  + ordenarPorPrazo(): ItemAcademico[]
+  + ordenarPorDataCriacao(): ItemAcademico[]
+  + ordenarPorOrigem(): ItemAcademico[]
+}
+
+abstract class ItemAcademico {
+  # _id: string
+  # _titulo: string
+  # _descricao: string
+  # _dataCriacao: Date
+  # _workspaceId: string
+  --
+  + get id(): string
+  + get titulo(): string
+  + get descricao(): string
+  + get dataCriacao(): Date
+  + get workspaceId(): string
+  --
+  # validarTitulo(titulo: string): void
+  # validarDescricao(descricao: string): void
+  + obterResumo(): string
+  + estaConcluido(): boolean
+  + estaAtrasado(hoje: Date = new Date()): boolean
+  + estaFixado(): boolean
+  + obterDataLimite(): Date | undefined
+  + obterOrigem(): "PROFESSOR" | "AUTOESTUDO" | undefined
+  --
+  + {abstract} obterCategoria(): string
+  + {abstract} estaPendente(): boolean
+  + {abstract} obterExibicaoFormatada(): string
+}
+
+class AtividadePratica {
+  - dataLimite: Date
+  - concluida: boolean
+  - dataConclusao?: Date
+  - origem: "PROFESSOR" | "AUTOESTUDO"
+  - checklist: ItemChecklist[]
+  - linkEntrega?: string
+  --
+  + obterCategoria(): string
+  + estaPendente(): boolean
+  + obterExibicaoFormatada(): string
+  + marcarComoConcluida(): void
+  + verificarSeAtrasada(): boolean
+  + calcularDiasRestantes(): number
+  + adicionarItemChecklist(item: ItemChecklist): void
+  + marcarItemChecklist(item: ItemChecklist): void
+}
+
+class TrabalhoEmGrupo {
+  - dataLimite: Date
+  - concluida: boolean
+  - dataConclusao?: Date
+  - colegasDeEquipe: string[]
+  - papelDoAluno: string
+  - etapas: EtapaTrabalho[]
+  --
+  + obterCategoria(): string
+  + estaPendente(): boolean
+  + obterExibicaoFormatada(): string
+  + marcarEtapaComoEntregue(etapa: EtapaTrabalho): void
+  + calcularProgresso(): number
+  + verificarConclusaoTotal(): boolean
+  + verificarSeAtrasada(): boolean
+  + calcularDiasRestantes(): number
+}
+
+class Lembrete {
+  - dataAviso?: Date
+  - fixado: boolean
+  - etiqueta: string
+  - arquivado: boolean
+  --
+  + obterCategoria(): string
+  + estaPendente(): boolean
+  + obterExibicaoFormatada(): string
+  + alternarFixacao(): void
+  + arquivar(): void
+  + desarquivar(): void
+}
+
+interface ItemChecklist {
+  + descricao: string
+  + feita: boolean
+}
+
+interface EtapaTrabalho {
+  + titulo: string
+  + responsavel: string
+  + entregue: boolean
+}
+
+class Dashboard {
+  - estudante: Estudante
+  --
+  + obterProximosPrazos(): ItemAcademico[]
+  + obterAtividadesAtrasadas(): ItemAcademico[]
+  + obterLembretesFixados(): ItemAcademico[]
+  + contarAtividadesConcluidasNaSemana(): number
+  + contarAtividadesConcluidasNoMes(): number
+  + contarPendenciasPorDisciplina(): Map<string, number>
+}
+
+' Relacionamentos
+Estudante "1" o-- "0..*" Workspace : gerencia
+Workspace "1" *-- "0..*" ItemAcademico : compõe
 
 ItemAcademico <|-- AtividadePratica
+ItemAcademico <|-- TrabalhoEmGrupo
 ItemAcademico <|-- Lembrete
-AtividadePratica <|-- TrabalhoEmGrupo
-Workspace "1" *-- "0..*" ItemAcademico
-PainelEstudante "1" o-- "0..*" Workspace
+
+AtividadePratica *-- "0..*" ItemChecklist
+TrabalhoEmGrupo *-- "0..*" EtapaTrabalho
+
+Dashboard --> "1" Estudante : consolida
+
+legend bottom left
+  <&diamond> vazio = Agregação | <&diamond> cheio = Composição
+  Seta com triângulo = Herança | Seta simples = Associação
+endlegend
 @enduml
