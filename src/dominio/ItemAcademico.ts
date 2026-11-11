@@ -1,4 +1,3 @@
-export type Origem = "PROFESSOR" | "AUTOESTUDO";
 export abstract class ItemAcademico {
     protected readonly _id: string;
     protected readonly _titulo: string;
@@ -64,7 +63,7 @@ export abstract class ItemAcademico {
     obterDataLimite(): Date | undefined {
         return undefined;
     }
-    obterOrigem(): Origem | undefined {
+    obterOrigem(): "PROFESSOR" | "AUTOESTUDO" | undefined {
         return undefined;
     }
 }
