@@ -78,11 +78,15 @@ class AtividadePratica {
   - dataConclusao?: Date
   - origem: "PROFESSOR" | "AUTOESTUDO"
   - checklist: ItemChecklist[]
-  - linkEntrega?: string
+  - linkEntrega?: string | undefined
   --
   + obterCategoria(): string
   + estaPendente(): boolean
   + obterExibicaoFormatada(): string
+  + estaConcluido(): boolean
+  + estaAtrasado(hoje: Date = new Date()): boolean
+  + obterDataLimite(): Date
+  + obterOrigem(): "PROFESSOR" | "AUTOESTUDO"
   + marcarComoConcluida(): void
   + verificarSeAtrasada(): boolean
   + calcularDiasRestantes(): number
