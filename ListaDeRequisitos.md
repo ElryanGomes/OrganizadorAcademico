@@ -59,19 +59,19 @@
 
 ## 5. Domínio: `AtividadePratica` [PDF §3.2.2, UML]
 
-- [ ] AT-01 `dataLimite: Date`.
-- [ ] AT-02 `concluida: boolean`, inicia `false`.
-- [ ] AT-03 `dataConclusao?: Date`, preenchida só ao concluir.
-- [ ] AT-04 `origem: "PROFESSOR" | "AUTOESTUDO"`.
-- [ ] AT-05 `checklist: Array<{ descricao: string, feita: boolean }>`, opcional, começa vazio.
+- [x] AT-01 `dataLimite: Date`.
+- [x] AT-02 `concluida: boolean`, inicia `false`.
+- [x] AT-03 `dataConclusao?: Date`, preenchida só ao concluir.
+- [x] AT-04 `origem: "PROFESSOR" | "AUTOESTUDO"`.
+- [x] AT-05 `checklist: Array<{ descricao: string, feita: boolean }>`, opcional, começa vazio.
 - [ ] AT-06 `linkEntrega?: string`.
-- [ ] AT-07 `estaPendente()` retorna `true` enquanto `concluida === false`.
-- [ ] AT-08 `marcarComoConcluida()`: `concluida = true` e `dataConclusao` com a data atual.
-- [ ] AT-09 `verificarSeAtrasada(hoje?)`: pendente e prazo vencido.
-- [ ] AT-10 `calcularDiasRestantes(hoje?)`: dias até o prazo.
+- [x] AT-07 `estaPendente()` retorna `true` enquanto `concluida === false`.
+- [x] AT-08 `marcarComoConcluida()`: `concluida = true` e `dataConclusao` com a data atual.
+- [x] AT-09 `verificarSeAtrasada(hoje?)`: pendente e prazo vencido.
+- [x] AT-10 `calcularDiasRestantes(hoje?)`: dias até o prazo.
 - [ ] AT-11 Checklist: adicionar item, marcar como feito, calcular progresso, sem expor o array.
-- [ ] AT-12 `obterCategoria()` ("Atividade Prática") e `obterExibicaoFormatada()`.
-- [ ] AT-13 Sobrescreve `estaConcluido`, `estaAtrasado`, `obterDataLimite` e `obterOrigem`.
+- [x] AT-12 `obterCategoria()` ("Atividade Prática") e `obterExibicaoFormatada()`.
+- [x] AT-13 Sobrescreve `estaConcluido`, `estaAtrasado`, `obterDataLimite` e `obterOrigem`.
 
 ## 6. Domínio: `TrabalhoEmGrupo` [PDF §3.2.3, UML]
 
