@@ -13,10 +13,10 @@
 ## 1. Entregáveis e Git [PDF §7.2]
 
 - [x] ENT-01 Repositório Git remoto criado.
-- [ ] ENT-02 Todos os integrantes commitam: o histórico mostra a equipe toda.
+- [x] ENT-02 Todos os integrantes commitam: o histórico mostra a equipe toda.
 - [x] ENT-03 `README.md` com instruções `npm install` e `npm start`.
-- [ ] ENT-04 `docs/diagrama.puml` e imagem exportada (PNG ou SVG) no repositório.
-- [ ] ENT-05 `src/dados-iniciais.json` no repositório.
+- [x] ENT-04 `docs/diagrama.puml` e imagem exportada (PNG ou SVG) no repositório.
+- [x] ENT-05 `src/dados-iniciais.json` no repositório.
 - [x] ENT-06 Clonar do zero e rodar `npm install` e `npm start` sem ajuste manual.
 
 ## 2. Configuração do projeto [PDF §4, §7.2]
@@ -44,17 +44,17 @@
 
 ## 4. Domínio: `ItemAcademico` [PDF §3.2.1, UML]
 
-- [ ] IT-01 Classe `abstract`, não instanciável diretamente.
-- [ ] IT-02 Atributos protegidos: `id: string` (gerado no cadastro, único, imutável), `titulo: string`, `descricao: string`, `dataCriacao: Date`, `workspaceId: string`.
-- [ ] IT-03 Validação de título: não vazio nem só espaços.
-- [ ] IT-04 Validação de descrição [Grupo]: limite definido pelo grupo (ex.: até 500 caracteres).
-- [ ] IT-05 Consulta do identificador (getter) e `obterResumo(): string`.
-- [ ] IT-06 Abstrato `obterCategoria(): string`.
-- [ ] IT-07 Abstrato `estaPendente(): boolean`.
-- [ ] IT-08 Abstrato `obterExibicaoFormatada(): string`.
-- [ ] IT-09 Métodos concretos com resposta padrão, sobrescritos pelas filhas [UML]: `estaConcluido(hoje?)`, `estaAtrasado(hoje?)`, `estaFixado()`, `obterDataLimite()`, `obterOrigem()`. Servem para o `Workspace` filtrar e ordenar sem `instanceof`.
-- [ ] IT-10 `Date` protegido: copiar ao receber e ao devolver.
-- [ ] IT-11 Sem setters que quebrem invariantes (`id` e `dataCriacao` nunca mudam).
+- [x] IT-01 Classe `abstract`, não instanciável diretamente.
+- [x] IT-02 Atributos protegidos: `id: string` (gerado no cadastro, único, imutável), `titulo: string`, `descricao: string`, `dataCriacao: Date`, `workspaceId: string`.
+- [x] IT-03 Validação de título: não vazio nem só espaços.
+- [x] IT-04 Validação de descrição [Grupo]: limite definido pelo grupo (ex.: até 500 caracteres).
+- [x] IT-05 Consulta do identificador (getter) e `obterResumo(): string`.
+- [x] IT-06 Abstrato `obterCategoria(): string`.
+- [x] IT-07 Abstrato `estaPendente(): boolean`.
+- [x] IT-08 Abstrato `obterExibicaoFormatada(): string`.
+- [x] IT-09 Métodos concretos com resposta padrão, sobrescritos pelas filhas [UML]: `estaConcluido(hoje?)`, `estaAtrasado(hoje?)`, `estaFixado()`, `obterDataLimite()`, `obterOrigem()`. Servem para o `Workspace` filtrar e ordenar sem `instanceof`.
+- [x] IT-10 `Date` protegido: copiar ao receber e ao devolver.
+- [x] IT-11 Sem setters que quebrem invariantes (`id` e `dataCriacao` nunca mudam).
 - [ ] IT-12 Saber responder: por que esses três métodos são abstratos?
 
 ## 5. Domínio: `AtividadePratica` [PDF §3.2.2, UML]
