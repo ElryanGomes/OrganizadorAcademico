@@ -75,16 +75,16 @@
 
 ## 6. Domínio: `TrabalhoEmGrupo` [PDF §3.2.3, UML]
 
-- [ ] TG-01 Herda `dataLimite`, `concluida` e `dataConclusao` de atividade, sem duplicar código.
-- [ ] TG-02 `colegasDeEquipe: string[]`.
-- [ ] TG-03 `papelDoAluno: string`.
-- [ ] TG-04 `etapas: Array<{ titulo: string, responsavel: string, entregue: boolean }>`.
-- [ ] TG-05 `estaPendente()` retorna `true` enquanto o trabalho não estiver 100% finalizado.
-- [ ] TG-06 Marcar etapa como entregue (erro claro se a etapa não existir) [Grupo].
-- [ ] TG-07 Progresso percentual da equipe, tratando zero etapas.
-- [ ] TG-08 `verificarConclusaoTotal(): boolean` [UML].
-- [ ] TG-09 Listas internas encapsuladas (cópia ou `ReadonlyArray`).
-- [ ] TG-10 `obterCategoria()` ("Trabalho em Grupo") e `obterExibicaoFormatada()`.
+- [x] TG-01 Herda `dataLimite`, `concluida` e `dataConclusao` de atividade, sem duplicar código.
+- [x] TG-02 `colegasDeEquipe: string[]`.
+- [x] TG-03 `papelDoAluno: string`.
+- [x] TG-04 `etapas: Array<{ titulo: string, responsavel: string, entregue: boolean }>`.
+- [x] TG-05 `estaPendente()` retorna `true` enquanto o trabalho não estiver 100% finalizado.
+- [x] TG-06 Marcar etapa como entregue (erro claro se a etapa não existir) [Grupo].
+- [x] TG-07 Progresso percentual da equipe, tratando zero etapas.
+- [x] TG-08 `verificarConclusaoTotal(): boolean` [UML].
+- [x] TG-09 Listas internas encapsuladas (cópia ou `ReadonlyArray`).
+- [x] TG-10 `obterCategoria()` ("Trabalho em Grupo") e `obterExibicaoFormatada()`.
 
 ## 7. Domínio: `Lembrete` [PDF §3.2.4, UML]
 

@@ -95,21 +95,20 @@ class AtividadePratica {
 }
 
 class TrabalhoEmGrupo {
-  - dataLimite: Date
-  - concluida: boolean
-  - dataConclusao?: Date
   - colegasDeEquipe: string[]
   - papelDoAluno: string
   - etapas: EtapaTrabalho[]
   --
+  + get colegasDeEquipe(): string[]
+  + get papelDoAluno(): string
+  + get etapas(): EtapaTrabalho[]
+  --
   + obterCategoria(): string
-  + estaPendente(): boolean
   + obterExibicaoFormatada(): string
-  + marcarEtapaComoEntregue(etapa: EtapaTrabalho): void
+  + adicionarEtapa(etapa: EtapaTrabalho): void
+  + marcarEtapaComoEntregue(tituloEtapa: string): void
   + calcularProgresso(): number
   + verificarConclusaoTotal(): boolean
-  + verificarSeAtrasada(): boolean
-  + calcularDiasRestantes(): number
 }
 
 class Lembrete {
@@ -153,7 +152,7 @@ Estudante "1" o-- "0..*" Workspace : gerencia
 Workspace "1" *-- "0..*" ItemAcademico : compõe
 
 ItemAcademico <|-- AtividadePratica
-ItemAcademico <|-- TrabalhoEmGrupo
+AtividadePratica <|-- TrabalhoEmGrupo
 ItemAcademico <|-- Lembrete
 
 AtividadePratica *-- "0..*" ItemChecklist
