@@ -1,0 +1,30 @@
+
+{
+    "nome": "Elryan",
+    "workspaces": [
+        {
+            "codigo": "POO",
+            "nome": "Programação Orientada a Objetos",
+            "professor": "Iallen Gábio",
+            "itens": []
+        },
+        {
+            "codigo": "BD",
+            "nome": "Banco de Dados",
+            "professor": "Wanderson de Vasconcelos",
+            "itens": []
+        },
+        {
+            "codigo": "ES",
+            "nome": "Engenharia de Software",
+            "professor": "Mayllon Veras",
+            "itens": []
+        },
+        {
+            "codigo": "SO",
+            "nome": "Sistemas Operacionais",
+            "professor": "Maykol Sampaio",
+            "itens": []
+        }
+    ]
+}
