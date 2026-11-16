@@ -117,8 +117,13 @@ class Lembrete {
   - etiqueta: string
   - arquivado: boolean
   --
+  + get etiqueta(): string
+  + get dataAviso(): Date | undefined
+  + get arquivado(): boolean
+  --
   + obterCategoria(): string
   + estaPendente(): boolean
+  + estaFixado(): boolean
   + obterExibicaoFormatada(): string
   + alternarFixacao(): void
   + arquivar(): void
