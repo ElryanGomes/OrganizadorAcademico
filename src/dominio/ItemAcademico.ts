@@ -54,7 +54,7 @@ export abstract class ItemAcademico {
     estaConcluido(): boolean {
         return false;
     }
-    estaAtrasado(hoje: Date = new Date()): boolean {
+    estaAtrasado(_hoje: Date = new Date()): boolean {
         return false;
     }
     estaFixado(): boolean {

@@ -88,15 +88,15 @@
 
 ## 7. Domínio: `Lembrete` [PDF §3.2.4, UML]
 
-- [ ] LE-01 `dataAviso?: Date`.
-- [ ] LE-02 `fixado: boolean`.
-- [ ] LE-03 `etiqueta: string` (ex.: "Aviso de Aula", "Material Necessário").
-- [ ] LE-04 `arquivado: boolean` [UML].
-- [ ] LE-05 `alternarFixacao()` inverte `fixado`.
-- [ ] LE-06 `arquivar()` e `desarquivar()` [UML].
-- [ ] LE-07 `estaPendente()` retorna `false` por padrão; `true` só com `dataAviso` futura e lembrete não arquivado.
-- [ ] LE-08 `obterCategoria()` ("Lembrete") e `obterExibicaoFormatada()`.
-- [ ] LE-09 Sobrescreve `estaFixado()` e `obterDataLimite()` onde necessário.
+- [x] LE-01 `dataAviso?: Date`.
+- [x] LE-02 `fixado: boolean`.
+- [x] LE-03 `etiqueta: string` (ex.: "Aviso de Aula", "Material Necessário").
+- [x] LE-04 `arquivado: boolean` [UML].
+- [x] LE-05 `alternarFixacao()` inverte `fixado`.
+- [x] LE-06 `arquivar()` e `desarquivar()` [UML].
+- [x] LE-07 `estaPendente()` retorna `false` por padrão; `true` só com `dataAviso` futura e lembrete não arquivado.
+- [x] LE-08 `obterCategoria()` ("Lembrete") e `obterExibicaoFormatada()`.
+- [x] LE-09 Sobrescreve `estaFixado()` e `obterDataLimite()` onde necessário.
 
 ## 8. Domínio: `Workspace` [PDF §3.1, UML]
 
