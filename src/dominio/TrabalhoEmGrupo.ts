@@ -59,6 +59,16 @@ export class TrabalhoEmGrupo extends AtividadePratica {
 
         super.marcarComoConcluida();
     }
+    obterCategoria(): string {
+    return "Trabalho em Grupo";
+}
+
+    obterExibicaoFormatada(): string {
+        const prazo = this.obterDataLimite().toLocaleDateString("pt-BR");
+        const progresso = this.calcularProgresso();
+        
+        return `${this.titulo} - Prazo: ${prazo} - Progresso: ${progresso}%`;
+}
 
     adicionarEtapa(etapa: EtapaTrabalho): void {
         this._etapas.push({ titulo: etapa.titulo, responsavel: etapa.responsavel, entregue: etapa.entregue });
