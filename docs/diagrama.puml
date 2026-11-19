@@ -105,6 +105,7 @@ class TrabalhoEmGrupo {
   --
   + obterCategoria(): string
   + obterExibicaoFormatada(): string
+  + marcarComoConcluida(): void
   + adicionarEtapa(etapa: EtapaTrabalho): void
   + marcarEtapaComoEntregue(tituloEtapa: string): void
   + calcularProgresso(): number
