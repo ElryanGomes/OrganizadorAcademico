@@ -52,6 +52,13 @@ export class TrabalhoEmGrupo extends AtividadePratica {
         return copiaEtapaTrabalho;
     }
 
+    marcarComoConcluida(): void {
+        if (!this.verificarConclusaoTotal()) {
+            throw new Error("Todas as etapas devem estar entregues para concluir o trabalho.");
+        }
+
+        super.marcarComoConcluida();
+    }
 
     adicionarEtapa(etapa: EtapaTrabalho): void {
         this._etapas.push({ titulo: etapa.titulo, responsavel: etapa.responsavel, entregue: etapa.entregue });
